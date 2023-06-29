@@ -7,4 +7,4 @@ console.log("jolly");
 
 const summa = 90;
 
-hello
+const hello = "hello";
