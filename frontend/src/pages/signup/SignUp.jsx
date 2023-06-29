@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import { BsFillPersonVcardFill } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
-import { AiFillEye } from "react-icons/ai";
 import {Link} from "react-router-dom";
 import "./SignUp.css";
+import Input from "../../components/input/Input";
 const Login = () => {
   const [firstName,setFirstName] = useState("");
   const [lastName,setLastName] = useState("");
@@ -19,7 +17,6 @@ const Login = () => {
       email : email,
       password : password
     }
-
     console.log(formValues);
   };
 
@@ -33,43 +30,11 @@ const Login = () => {
       </p>
       <form className="login-form">
         <div className="name-container">
-          <div className="input-container">
-            <div className="input-section">
-              <p className="label">First Name</p>
-              <input className="form-input" value={firstName} onInput={(e) => {setFirstName(e.target.value)}}/>
-            </div>
-            <div className="form-icon">
-              <BsFillPersonVcardFill size={"20px"} />
-            </div>
-          </div>
-          <div className="input-container">
-            <div className="input-section">
-              <p className="label">Last Name</p>
-              <input className="form-input" value={lastName} onInput={(e) => {setLastName(e.target.value)}}/>
-            </div>
-            <div className="form-icon">
-              <BsFillPersonVcardFill size={"20px"} />
-            </div>
-          </div>
+          <Input label="First Name" value={firstName} set={{setFirstName,setLastName,setEmail,setPassword}}/>
+          <Input label="Last Name" value={lastName} set={{setFirstName,setLastName,setEmail,setPassword}}/>
         </div>
-        <div className="input-container">
-          <div className="input-section">
-            <p className="label">Email</p>
-            <input className="form-input" value={email} onInput={(e) => {setEmail(e.target.value)}}/>
-          </div>
-          <div className="form-icon">
-            <MdEmail size={"22px"} />
-          </div>
-        </div>
-        <div className="input-container">
-          <div className="input-section">
-            <p className="label">Password</p>
-            <input type="password" className="form-input" value={password} onInput={(e) => {setPassword(e.target.value)}}/>
-          </div>
-          <div className="form-icon">
-            <AiFillEye size={"22px"} />
-          </div>
-        </div>
+        <Input label="Email" value={email} set={{setFirstName,setLastName,setEmail,setPassword}}/>
+        <Input label="Password" value={password} set={{setFirstName,setLastName,setEmail,setPassword}}/>
         <div className="form-button-container">
           <button className="form-button back"><Link to="/">Go back</Link></button>
           <button className="form-button create" onClick={handleSubmit}>Create account</button>

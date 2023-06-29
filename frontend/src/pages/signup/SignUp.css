@@ -45,10 +45,6 @@ span {
   display: flex;
   gap: 20px;
 }
-
-.label {
-  font-size: 12px;
-}
 .input-container {
   display: flex;
   align-items: center;
@@ -71,6 +67,9 @@ span {
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
+}
+.label {
+  font-size: 12px;
 }
 .form-input {
   background-color: rgb(50, 54, 68);
