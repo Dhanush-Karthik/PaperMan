@@ -82,7 +82,7 @@ const Navbar = () => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={handleClick}
               color="inherit"
             >
               <MenuIcon />
@@ -178,7 +178,7 @@ const Navbar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={handleClick}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
