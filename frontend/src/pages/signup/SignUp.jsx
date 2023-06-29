@@ -4,7 +4,7 @@ import { BsFillPersonVcardFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
 import {Link} from "react-router-dom";
-import "./Login.css";
+import "./SignUp.css";
 const Login = () => {
   const [firstName,setFirstName] = useState("");
   const [lastName,setLastName] = useState("");
@@ -29,7 +29,7 @@ const Login = () => {
       <h3 className="sub-heading1">START FOR FREE</h3>
       <h1 className="main-heading">Create new account<span>.</span></h1>
       <p className="sub-heading2">
-        Already a Member? <span><a href="##"><Link to="../login">Log In</Link></a></span>
+        Already a Member? <span><Link to="../login">Log In</Link></span>
       </p>
       <form className="login-form">
         <div className="name-container">
