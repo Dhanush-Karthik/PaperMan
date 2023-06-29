@@ -11,7 +11,7 @@ const Login = () => {
       <h3 className="sub-heading1">START FOR FREE</h3>
       <h1 className="main-heading">Create new account<span>.</span></h1>
       <p className="sub-heading2">
-        Already a Member? <span>Log In</span>
+        Already a Member? <span><a href="##">Log In</a></span>
       </p>
       <form className="login-form">
         <div className="name-container">

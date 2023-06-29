@@ -1,6 +1,5 @@
 body,
 html {
-  background-color: rgb(39, 42, 55);
   background-image: radial-gradient(
       circle at top right,
       rgba(39, 42, 55, 0.9),
@@ -10,7 +9,6 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: gradient-animation 5s infinite linear;
 }
 .login-container {
   color: black;
@@ -87,6 +85,7 @@ span {
   align-items: center;
   justify-content: center;
   width: 50px;
+  cursor: pointer;
 }
 .form-button-container {
   margin-top: 25px;
@@ -109,4 +108,20 @@ span {
 }
 input:focus {
   outline: none;
+}
+
+@media screen and (max-width:610px){
+    .main-heading{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:510px){
+    .main-heading{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:410px){
+    .main-heading{
+        font-size: 35px;
+    }
 }
