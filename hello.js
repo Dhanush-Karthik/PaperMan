@@ -3,4 +3,4 @@ const a=10;
 
 console.log("working");
 
-console.log("jolly")
+console.log("jolly");
