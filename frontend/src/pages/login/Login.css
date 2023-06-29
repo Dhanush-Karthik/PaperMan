@@ -1,3 +1,112 @@
-.login-container{
-    color: black;
+body,
+html {
+  background-color: rgb(39, 42, 55);
+  background-image: radial-gradient(
+      circle at top right,
+      rgba(39, 42, 55, 0.9),
+      rgba(39, 42, 55, 1)
+    ),
+    url("../../img/mountain.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: gradient-animation 5s infinite linear;
+}
+.login-container {
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  height: 100vh;
+  flex-direction: column;
+  padding-left: 5vw;
+}
+
+.sub-heading1 {
+  color: rgb(154, 165, 180);
+  font-size: 15px;
+}
+.main-heading {
+  font-size: 60px;
+  color: #fff;
+  margin: 10px 0px;
+}
+.sub-heading2 {
+  color: rgb(154, 165, 180);
+}
+span {
+  color: rgb(33, 124, 207);
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.name-container {
+  display: flex;
+  gap: 20px;
+}
+
+.label {
+  font-size: 12px;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(50, 54, 68);
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 2px solid rgb(50, 54, 68);
+  color: rgb(114, 123, 138);
+  transition: 250ms all ease;
+}
+.input-container:hover {
+  color: rgb(35, 131, 218);
+  border: 2px solid rgb(35, 131, 218);
+}
+.input-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+.form-input {
+  background-color: rgb(50, 54, 68);
+  color: #fff;
+  border: none;
+  border-style: none;
+  width: 100%;
+}
+.form-icon {
+  color: rgb(169, 172, 177);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+.form-button-container {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.form-button {
+  background-color: rgb(85, 91, 105);
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  color: #fff;
+}
+.back {
+  background-color: rgb(85, 91, 105);
+}
+.create {
+  background-color: rgb(28, 144, 245);
+}
+input:focus {
+  outline: none;
 }
