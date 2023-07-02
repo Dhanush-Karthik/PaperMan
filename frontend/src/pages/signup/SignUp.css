@@ -82,4 +82,12 @@ input:focus {
     .main-heading{
         font-size: 35px;
     }
+
+    .name-container{
+      flex-direction: column;
+      gap: 0px;
+    }
+    .login-form{
+      width: 100%;
+    }
 }
