@@ -10,7 +10,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
 }
-.login-container {
+.signup-container {
   color: black;
   display: flex;
   align-items: flex-start;
@@ -36,7 +36,7 @@ html {
 span {
   color: rgb(33, 124, 207);
 }
-.login-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -72,6 +72,7 @@ input:focus {
     .main-heading{
         font-size: 50px;
     }
+    
 }
 @media screen and (max-width:510px){
     .main-heading{
@@ -87,7 +88,7 @@ input:focus {
       flex-direction: column;
       gap: 0px;
     }
-    .login-form{
+    .signup-form{
       width: 100%;
     }
 }

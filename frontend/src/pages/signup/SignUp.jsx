@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
 import {Link} from "react-router-dom";
 import "./SignUp.css";
 import Input from "../../components/input/Input";
+
 const SignUp = () => {
   const [firstName,setFirstName] = useState("");
   const [lastName,setLastName] = useState("");
@@ -22,14 +22,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className="login-container">
-      <Navbar />
+    <div className="signup-container">
+      {/* <Navbar /> */}
       <h3 className="sub-heading1">START FOR FREE</h3>
       <h1 className="main-heading">Create new account<span>.</span></h1>
       <p className="sub-heading2">
         Already a Member? <span><Link to="../login">Log In</Link></span>
       </p>
-      <form className="login-form">
+      <form className="signup-form">
         <div className="name-container">
           <Input label="First Name" value={firstName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
           <Input label="Last Name" value={lastName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
