@@ -11,12 +11,13 @@ const Input = ({ label, value, set }) => {
     <div className="input-container">
       <div className="input-section">
         <p className="label">{label}</p>
-        {label !== "Password" ? (
+        {(label !== "Password" && label!== "Confirm Password") ? (
           <input
             className="form-input"
             id={label}
             value={value}
             onInput={(e) => {
+              console.log(label)
               if (e.target.id === "First Name") {
                 set.setFirstName(e.target.value);
               } else if (e.target.id === "Last Name") {
@@ -33,7 +34,8 @@ const Input = ({ label, value, set }) => {
             value={value}
             type={showPassword ? "text" : "password"}
             onInput={(e) => {
-              set.setPassword(e.target.value);
+              console.log(e.target.id);
+              (e.target.id === "Password") ? set.setPassword(e.target.value): set.setCpassword(e.target.value);
             }}
           />
         )}
@@ -43,7 +45,7 @@ const Input = ({ label, value, set }) => {
           <BsFillPersonVcardFill size={"20px"} />
         )}
         {label === "Email" && <MdEmail size={"22px"} />}
-        {label === "Password" && (
+        {(label === "Password" || label === "Confirm Password" )&& (
           <AiFillEye
             size={"22px"}
             onClick={() => {
