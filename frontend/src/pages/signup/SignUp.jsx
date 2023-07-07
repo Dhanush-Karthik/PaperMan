@@ -31,14 +31,14 @@ const SignUp = () => {
       </p>
       <form className="signup-form">
         <div className="name-container">
-          <Input label="First Name" value={firstName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
-          <Input label="Last Name" value={lastName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
+          <Input label="First Name" id="fn" value={firstName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
+          <Input label="Last Name" id="ln" value={lastName} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
         </div>
-        <Input label="Email" value={email} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
-        <Input label="Password" value={password} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
-        <Input label="Confirm Password" value={cpassword} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
+        <Input label="Email" id="email" value={email} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
+        <Input label="Password" id="password" value={password} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
+        <Input label="Confirm Password" id="password" value={cpassword} set={{setFirstName,setLastName,setEmail,setPassword,setCpassword}}/>
         <div className="form-button-container">
-          <button className="form-button back"><Link to="/">Go back</Link></button>
+          <button className="form-button back" onClick={(e)=>e.preventDefault()}><Link to="../login">Sign in</Link></button>
           <button className="form-button create" onClick={handleSubmit}>Create account</button>
         </div>
       </form>

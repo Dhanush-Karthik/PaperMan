@@ -3,27 +3,30 @@ import "./Input.css";
 import { BsFillPersonVcardFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { AiFillEye } from "react-icons/ai";
+import {BsFillPersonFill} from "react-icons/bs";
 
-const Input = ({ label, value, set }) => {
+const Input = ({ label, id, value, set }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="input-container">
       <div className="input-section">
         <p className="label">{label}</p>
-        {(label !== "Password" && label!== "Confirm Password") ? (
+        {id !== "password" ? (
           <input
             className="form-input"
-            id={label}
+            id={id}
             value={value}
             onInput={(e) => {
               console.log(label)
-              if (e.target.id === "First Name") {
+              if (e.target.id === "fn") {
                 set.setFirstName(e.target.value);
-              } else if (e.target.id === "Last Name") {
+              } else if (e.target.id === "ln") {
                 set.setLastName(e.target.value);
-              } else {
+              } else if(e.target.id === "email"){
                 set.setEmail(e.target.value);
+              }else{
+                set.setId(e.target.value);
               }
             }}
           />
@@ -41,11 +44,12 @@ const Input = ({ label, value, set }) => {
         )}
       </div>
       <div className="form-icon">
-        {(label === "First Name" || label === "Last Name") && (
+        {(id === "fn" || id === "ln") && (
           <BsFillPersonVcardFill size={"20px"} />
         )}
-        {label === "Email" && <MdEmail size={"22px"} />}
-        {(label === "Password" || label === "Confirm Password" )&& (
+        {id === "email" && <MdEmail size={"22px"} />}
+        {id === "id" && <BsFillPersonFill size={"22px"}/>}
+        {id === "password" && (
           <AiFillEye
             size={"22px"}
             onClick={() => {
