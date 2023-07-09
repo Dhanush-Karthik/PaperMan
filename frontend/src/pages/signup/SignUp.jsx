@@ -25,7 +25,7 @@ const SignUp = () => {
     <div className="signup-container">
       {/* <Navbar /> */}
       <h3 className="sub-heading1">START FOR FREE</h3>
-      <h1 className="main-heading">Create new account<span>.</span></h1>
+      <h1 className="main-heading">Create new <span>account.</span></h1>
       <p className="sub-heading2">
         Already a Member? <span><Link to="../login">Log In</Link></span>
       </p>

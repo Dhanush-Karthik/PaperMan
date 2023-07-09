@@ -12,8 +12,8 @@
     transition: 250ms all ease;
   }
   .input-container:hover {
-    color: rgb(35, 131, 218);
-    border: 2px solid rgb(35, 131, 218);
+    color: rgb(13 148 136);
+    border: 2px solid rgb(13 148 136);
   }
   .input-section {
     display: flex;

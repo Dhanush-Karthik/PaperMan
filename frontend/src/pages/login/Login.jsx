@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className='login-container'> 
       <h3 className="sub-heading1">DIVE IN</h3>
-      <h1 className="main-heading">Login to your account<span>.</span></h1>
+      <h1 className="main-heading">Login to your <span>account.</span></h1>
       <p className="sub-heading2">
         New Member? <span><Link to="../signup">Sign up</Link></span>
       </p>
