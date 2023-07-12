@@ -1,7 +1,6 @@
 import { useState } from "react";
 import React from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import {BsArrowReturnRight} from "react-icons/bs";
 
 import img from "../../img/profile.png";
 
