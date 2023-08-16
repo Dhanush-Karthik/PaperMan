@@ -2,16 +2,17 @@ import { React, useState } from "react";
 
 import "./BlogPage.css";
 
-import { AiFillLike, AiOutlineArrowRight, AiOutlineLike} from "react-icons/ai";
+import { AiFillLike, AiOutlineArrowRight, AiOutlineLike } from "react-icons/ai";
 import { BiCommentDetail } from "react-icons/bi";
 import Tags from "../../components/tags/Tags";
 
 import CommentContainer from "../../components/commentcontainer/CommentContainer";
 
+import profile from "../../img/profile.png";
 const Blogpage = () => {
-  const [openComment,setOpenComment]=useState(true);
+  const [openComment, setOpenComment] = useState(true);
   const [isLike, setIsLike] = useState(false);
-  
+
   const subtitle = [
     {
       id: 1,
@@ -62,8 +63,6 @@ const Blogpage = () => {
     },
   ];
 
-  
-
   const tags = [
     {
       id: 1,
@@ -110,13 +109,13 @@ const Blogpage = () => {
       value: "HTML",
     },
   ];
-  const handleComment=()=>{
-    setOpenComment(false)
-  }
+  const handleComment = () => {
+    setOpenComment(false);
+  };
 
   const handleLike = () => {
     setIsLike(!isLike);
-  }
+  };
 
   return (
     <>
@@ -128,7 +127,11 @@ const Blogpage = () => {
       <div className="blog-container">
         <div id="options" className="options">
           <div className="icons" onClick={handleLike}>
-            {isLike?<AiFillLike size={"20px"} color="rgb(13 148 136)" />:<AiOutlineLike size={"20px"} color="rgb(13 148 136)"/>}
+            {isLike ? (
+              <AiFillLike size={"20px"} color="rgb(13 148 136)" />
+            ) : (
+              <AiOutlineLike size={"20px"} color="rgb(13 148 136)" />
+            )}
           </div>
           <div className="icons" onClick={handleComment}>
             <BiCommentDetail size={"20px"} color="rgb(13 148 136)" />
@@ -149,17 +152,27 @@ const Blogpage = () => {
               );
             })}
           </p>
-
-          
         </div>
         <div className="side-pannel">
           <div className="top-categories">
             <h1 className="title">Top Categories</h1>
             <div className="catg-container">
-              {tags.map((item) => <Tags id={item.id} value={item.value} />)}
+              {tags.map((item) => (
+                <Tags id={item.id} value={item.value} />
+              ))}
             </div>
           </div>
           <div className="sidepanel-sticky">
+            <div className="sidepanel-container">
+              <h1 className="title">Author</h1>
+              <div className="author">
+                <img src={profile} className="profile-photo" />
+                <div>
+                  <div className="author-name">Dhanush Karthik</div>
+                  <div className="author-role">Newbiee</div>
+                </div>
+              </div>
+            </div>
             <div className="sidepanel-container">
               <h1 className="title">Table of content</h1>
               <ul className="sidepanel-container-list">
@@ -193,7 +206,10 @@ const Blogpage = () => {
           </div>
         </div>
       </div>
-      <CommentContainer openComment={openComment} setOpenComment={setOpenComment} />
+      <CommentContainer
+        openComment={openComment}
+        setOpenComment={setOpenComment}
+      />
     </>
   );
 };
