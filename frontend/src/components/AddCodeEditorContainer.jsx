@@ -68,9 +68,14 @@ const AddCodeEditor = ({
     { value: "plaintext", label: "Text" },
   ];
   return (
-    <div className="w-[100%] flex gap-6 flex-col justify-center items-center gap-3   ">
-      <div className="flex md:flex-col gap-6 w-[90%] items-center justify-evenly ">
-        <div className="p-4">Choose the Language</div>
+    <div className="w-[100vw] flex  flex-col justify-center items-center gap-6   ">
+      <div className="w-[90%] mt-6 text-2xl flex gap-1 font-semibold">
+        Code <div className="text-teal-600 ">Editor</div>
+      </div>
+      <div className="flex flex-col gap-2  items-center justify-evenly ">
+        <div className="p-4 flex gap-2">
+          Select the <div className="text-teal-600">language</div>
+        </div>
         <div>
           <CreatableSelect
             isClearable
