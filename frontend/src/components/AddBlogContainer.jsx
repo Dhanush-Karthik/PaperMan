@@ -13,6 +13,7 @@ import BlogSubmit from "./BlogSubmit";
 const AddBlogContainer = ({ setAddBlog, addBlog }) => {
   const [language, setLanguage] = useState("javascript");
   const [code, setCode] = useState("");
+  const [loading, setLoading] = useState(false);
   const [blogObject, setBlogObject] = useState({
     title: "",
     subtitle: "",
@@ -58,6 +59,7 @@ const AddBlogContainer = ({ setAddBlog, addBlog }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await axios.post(
         "http://localhost:4000/blog/save",
@@ -68,6 +70,7 @@ const AddBlogContainer = ({ setAddBlog, addBlog }) => {
       console.log("error on posting the blog");
       console.log(error);
     }
+    setLoading(false);
   };
   console.log(blogObject);
   return (
@@ -93,7 +96,7 @@ const AddBlogContainer = ({ setAddBlog, addBlog }) => {
         language={language}
       />
       <DescriptionWithCode handleDescription={handleDescription} />
-      <BlogSubmit handleSubmit={handleSubmit} />
+      <BlogSubmit handleSubmit={handleSubmit} loading={loading} />
       <Footer />
     </div>
   );

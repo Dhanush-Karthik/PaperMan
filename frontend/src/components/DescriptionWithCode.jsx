@@ -134,7 +134,10 @@ export default function DescriptionWithCode({ handleDescription }) {
   };
 
   return (
-    <div className="flx w-full">
+    <div className="flx w-full flex-col">
+      <div className="flex text-2xl gap-1 py-10 px-2 w-[90%] font-semibold  ">
+        Code <div className="text-teal-600">description</div>
+      </div>
       <div className="editor-wrapper" onClick={focusEditor}>
         <CodeToolBar
           editorState={editorState}
