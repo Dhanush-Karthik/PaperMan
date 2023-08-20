@@ -75,7 +75,7 @@ const AddBlogContainer = ({ setAddBlog, addBlog }) => {
   console.log(blogObject);
   return (
     <div
-      className={`bg-black h-[100vh] w-[100vw] flex flex-col gap-4  text-white  fixed   overflow-auto  top-0 right-0 transition-all duration-200 ease-out   ${
+      className={`bg-black h-[100vh] w-[100vw] flex flex-col  gap-4  text-white  fixed scrollbar-hide   overflow-auto  top-0 right-0 transition-all duration-200 ease-out   ${
         addBlog ? " translate-y-0 " : "translate-y-full "
       } `}
     >

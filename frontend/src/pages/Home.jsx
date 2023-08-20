@@ -19,7 +19,7 @@ const Home = () => {
     setDrop(!drop);
   };
   return (
-    <div className=" bg-black m-0 h-max overflow-hidden ">
+    <div className=" bg-black m-0 h-max overflow-hidden relative ">
       <Navbar handleDropDown={handleDropDown} drop={drop} />
       <HastagsContainer />
       <HomeCardContainer />

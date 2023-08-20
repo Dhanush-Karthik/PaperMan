@@ -9,6 +9,7 @@ import Tags from "../../components/tags/Tags";
 import CommentContainer from "../../components/commentcontainer/CommentContainer";
 
 import profile from "../../img/profile.png";
+import Navbar from "../../components/Navbar";
 const Blogpage = () => {
   const [openComment, setOpenComment] = useState(true);
   const [isLike, setIsLike] = useState(false);
@@ -119,11 +120,16 @@ const Blogpage = () => {
 
   return (
     <>
+      <Navbar />
+
       <div className="heading-container">
         <div className="route">Home &gt; Blog &gt; Is JS dead?</div>
-        <h1 className="blog-title">Is Java script dead?</h1>
-        <h1 className="subtitle">Lets get an overview!</h1>
+        <div className="topic">
+          <h1 className="blog-title">Is Java script dead?</h1>
+          <h1 className="subtitle">Lets get an overview!</h1>
+        </div>
       </div>
+
       <div className="blog-container">
         <div id="options" className="options">
           <div className="icons" onClick={handleLike}>
