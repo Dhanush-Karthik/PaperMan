@@ -8,6 +8,8 @@ import profile from "../../img/profile.png";
 import Stat from "../../components/stat/Stat";
 
 import { AiFillEdit } from "react-icons/ai";
+import BlogCard from "../../components/blogcard/BlogCard";
+
 
 const ProfilePage = () => {
   const [isEdit, setIsEdit] = useState(false);
@@ -15,6 +17,69 @@ const ProfilePage = () => {
   const [name, setName] = useState("Dhanush Karthik");
   const [email, setEmail] = useState("dhanushkarthik8@gmail.com");
   const [status, setStatus] = useState("Teach me to think!!");
+  
+
+  const listOfCards = [
+    {
+      caption: "End of React.js?",
+      thumbnail: "https://react.dev/images/home/conf2021/cover.svg",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 1,
+      hastags: [],
+    },
+    {
+      caption: "Learn WebML in easy Way",
+      thumbnail:
+        "https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1284006/retina_1708x683_cover-0323-MachineLearning_Dan_Newsletter-b21703f41d807514083e297955e1b46d.png",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 2,
+      hastags: [],
+    },
+    {
+      caption: "Javascript is god.",
+      thumbnail:
+        "https://cdn.geekboots.com/geek/javascript-meta-1652702081069.jpg",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 2,
+      hastags: [],
+    },
+    {
+      caption: "Learn sockets using Node.js",
+      thumbnail:
+        "https://www.peerbits.com/static/3908ce2a3941a9a56f1b145496600fac/189bc/development-practices-for-node-js-developers-main.jpg",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 3,
+      hastags: [],
+    },
+    {
+      caption: "Springboot",
+      thumbnail:
+        "https://miro.medium.com/v2/resize:fit:900/0*t61rpXrvkpesX_8U.jpg",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 4,
+      hastags: [],
+    },
+    {
+      caption: "Web development",
+      thumbnail:
+        "https://www.digitalsilk.com/wp-content/uploads/2022/09/website-development-process-1.jpg",
+      user: "PaperMan",
+      views: "60k",
+      timestamp: "4 minutes ago",
+      contentId: 5,
+      hastags: [],
+    },
+  ];
 
   return (
     <div className="profile-container">
@@ -26,11 +91,9 @@ const ProfilePage = () => {
               <ProfileOption title="Blogs Visited" />
             </div>
             <div className="profile-card-container">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {listOfCards.map((item)=>{
+                return <BlogCard cardData={item}/>
+              })}
             </div>
           </>
           <>
@@ -38,23 +101,9 @@ const ProfilePage = () => {
               <ProfileOption title="Blog posted" />
             </div>
             <div className="profile-card-container">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+            {listOfCards.map((item)=>{
+                return <BlogCard cardData={item}/>
+              })}
             </div>
           </>
         </div>
