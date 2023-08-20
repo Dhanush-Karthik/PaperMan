@@ -13,6 +13,7 @@ import BlogSubmit from "./BlogSubmit";
 const AddBlogContainer = ({ setAddBlog, addBlog }) => {
   const [language, setLanguage] = useState("javascript");
   const [code, setCode] = useState("");
+  const [openCodeEditor, setOpenCodeEditor] = useState(true);
   const [loading, setLoading] = useState(false);
   const [blogObject, setBlogObject] = useState({
     title: "",
