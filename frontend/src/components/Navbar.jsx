@@ -2,6 +2,7 @@ import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import SearchBar from "./SearchBar";
 import DropDown from "./DropDown";
+import {Link} from "react-router-dom"; 
 
 const Navbar = ({ handleDropDown, drop }) => {
   return (
@@ -31,10 +32,10 @@ const Navbar = ({ handleDropDown, drop }) => {
       <SearchBar />
       <div className="hidden md:w-[20%] md:flex w-[100%]  md:justify-evenly justify-between cursor-pointer text-sm ">
         <div className="p-3 bg-teal-600 rounded-md md:w-[40%] w-[30%]  text-center ">
-          LOGIN
+        <Link to="../login">Login</Link>
         </div>
         <div className="p-3 bg-teal-600 rounded-md md:w-[40%] w-[30%]  text-center ">
-          SIGNUP
+        <Link to="../signup">Sign up</Link>
         </div>
       </div>
     </div>

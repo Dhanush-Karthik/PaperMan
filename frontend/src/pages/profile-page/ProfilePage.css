@@ -1,0 +1,136 @@
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    color: white;
+}
+.profile-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(12,148,136);
+    height: 15%;
+    padding: 20px;
+}
+.profile-title{
+    font-size: 35px;
+}
+.user-name{
+    color: black;
+}
+.profile-content{
+    display: flex;
+    height: 100%;
+}
+.profile-left{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgb(18, 29, 38);
+    margin: 20px;
+    padding: 20px;
+    width: 75%;
+    height: fit-content;
+    border-radius: 20px;
+}
+.profile-options{
+    width: 100%;
+}
+.profile-card-container{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 10px;
+    gap: 10px;
+    margin: 20px 0px;
+}
+.profile-right{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 25%;
+    padding: 20px;
+    height: 100%;
+    position: sticky;
+    top: 0px;
+    gap: 15px;
+}
+.profile-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+}
+
+.profile-img{
+    width: 100px;
+    height: 100px;
+}
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    background-color: rgb(18,29,38);
+    border-radius: 20px;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    gap: 20px;
+    
+}
+
+.user-details{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 5px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(18,29,38);
+}
+.user-details-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+}
+.user-detail-title{
+    font-size: 24px;
+    color: rgb(12,148,136);
+}
+.user-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15px;
+}
+.user-detail-name{
+    color: rgb(149,149,149);
+    font-size: 15px;
+    margin: 8px 0px;
+}
+.user-detail-input{
+    width: 100%;
+    background-color: rgb(18,29,38);
+    border-radius: 20px;
+    height: 30px;
+    border: 1px solid rgb(12,148,136);
+    padding-left: 10px;
+    word-wrap: break-word;
+}
+.input-display{
+    padding-left: 0px;
+    border : none;
+}
+.profile-sticky{
+    position: sticky;
+    top: 10px;
+}
