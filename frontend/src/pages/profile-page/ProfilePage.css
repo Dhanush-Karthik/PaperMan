@@ -116,6 +116,7 @@
     color: rgb(149,149,149);
     font-size: 15px;
     padding-left: 10px;
+    margin: 2px;
 }
 .user-detail-input{
     width: 100%;
