@@ -36,17 +36,17 @@ const Hastags = () => {
     "Angular.js",
   ];
   return (
-    <div className="w-[100%] flex justify-evenly items-center   ">
-      <AiFillLeftCircle color="white" onClick={handleLeftClick} />
+    <div className="w-[100%] flex  justify-evenly items-center ">
+      <AiFillLeftCircle color="teal" onClick={handleLeftClick} />
       <div
         ref={scrollBar}
-        className="w-[90%] scroll-smooth flex gap-3 overflow-scroll p-3"
+        className="w-[90%] scroll-smooth flex items-center scrollbar-hide overflow-y-hidden gap-3  overflow-scroll "
       >
         {listOfHastags.map((hastag, index) => (
           <Hastag hastag={hastag} key={index} />
         ))}
       </div>
-      <AiFillRightCircle onClick={handleRightClick} color="white" />
+      <AiFillRightCircle onClick={handleRightClick} color="teal" />
     </div>
   );
 };

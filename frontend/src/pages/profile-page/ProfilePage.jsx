@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Navbar from "../../components/Navbar";
 import "./ProfilePage.css";
 import ProfileOption from "../../components/profile-option/ProfileOption";
 import Card from "../../components/card/Card";
@@ -16,12 +16,9 @@ const ProfilePage = () => {
   const [email, setEmail] = useState("dhanushkarthik8@gmail.com");
   const [status, setStatus] = useState("Teach me to think!!");
 
-
   return (
     <div className="profile-container">
-      <div className="profile-header">
-        <h1 className="profile-title">Nav Bar</h1>
-      </div>
+      <Navbar />
       <div className="profile-content">
         <div className="profile-left">
           <>
@@ -29,11 +26,11 @@ const ProfilePage = () => {
               <ProfileOption title="Blogs Visited" />
             </div>
             <div className="profile-card-container">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
             </div>
           </>
           <>
