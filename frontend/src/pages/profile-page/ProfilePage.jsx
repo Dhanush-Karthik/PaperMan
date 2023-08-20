@@ -3,20 +3,18 @@ import Navbar from "../../components/Navbar";
 import "./ProfilePage.css";
 import ProfileOption from "../../components/profile-option/ProfileOption";
 
-
 import profile from "../../img/profile.png";
 import Stat from "../../components/stat/Stat";
-
 
 import BlogCard from "../../components/blogcard/BlogCard";
 import UserDetails from "../../components/userdetails/UserDetails";
 
+import { BsFillPersonFill } from "react-icons/bs";
 
 const ProfilePage = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   const [name, setName] = useState("Dhanush Karthik");
-  
 
   const listOfCards = [
     {
@@ -80,15 +78,13 @@ const ProfilePage = () => {
     },
   ];
 
-  
-
-  useEffect(()=>{
+  useEffect(() => {
     document.getElementById("name").focus();
-  },[isEdit]);
+  }, [isEdit]);
 
   const handleEdit = () => {
     setIsEdit(!isEdit);
-  }
+  };
 
   return (
     <div className="profile-container">
@@ -100,8 +96,8 @@ const ProfilePage = () => {
               <ProfileOption title="Blogs Visited" />
             </div>
             <div className="profile-card-container">
-              {listOfCards.map((item)=>{
-                return <BlogCard cardData={item}/>
+              {listOfCards.map((item) => {
+                return <BlogCard cardData={item} />;
               })}
             </div>
           </>
@@ -110,8 +106,8 @@ const ProfilePage = () => {
               <ProfileOption title="Blog posted" />
             </div>
             <div className="profile-card-container">
-            {listOfCards.map((item)=>{
-                return <BlogCard cardData={item}/>
+              {listOfCards.map((item) => {
+                return <BlogCard cardData={item} />;
               })}
             </div>
           </>
@@ -124,13 +120,23 @@ const ProfilePage = () => {
             </div>
             <img src={profile} className="profile-img" />
           </div>
-          <UserDetails name={name} setName={setName} handleEdit={handleEdit} isEdit={isEdit}/>
+          <UserDetails
+            name={name}
+            setName={setName}
+            handleEdit={handleEdit}
+            isEdit={isEdit}
+          />
           <div className="stats">
             <Stat title="Blogs Read" color={"#5C38FF"} count={264} />
             <Stat title="Blogs Liked" color={"#63C4ED"} count={1024} />
             <Stat title="Blogs Posted" color={"#FFD059"} count={34} />
             <Stat title="Blogs " color={"#FF5858"} count={98} />
           </div>
+        </div>
+      </div>
+      <div className="profile-floater">
+        <div className="profile-icon">
+          <BsFillPersonFill />
         </div>
       </div>
     </div>

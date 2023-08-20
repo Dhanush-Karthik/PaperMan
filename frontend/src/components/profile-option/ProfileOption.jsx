@@ -1,6 +1,5 @@
 import React from "react";
 
-import { PiGridFourFill } from "react-icons/pi";
 import { FaBars } from "react-icons/fa";
 import "./ProfileOption.css";
 
