@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import "./ProfilePage.css";
 import ProfileOption from "../../components/profile-option/ProfileOption";
-import Card from "../../components/card/Card";
+
 
 import profile from "../../img/profile.png";
 import Stat from "../../components/stat/Stat";
 
-import { AiFillEdit } from "react-icons/ai";
+
 import BlogCard from "../../components/blogcard/BlogCard";
+import UserDetails from "../../components/userdetails/UserDetails";
 
 
 const ProfilePage = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   const [name, setName] = useState("Dhanush Karthik");
-  const [email, setEmail] = useState("dhanushkarthik8@gmail.com");
-  const [status, setStatus] = useState("Teach me to think!!");
   
 
   const listOfCards = [
@@ -81,6 +80,16 @@ const ProfilePage = () => {
     },
   ];
 
+  
+
+  useEffect(()=>{
+    document.getElementById("name").focus();
+  },[isEdit]);
+
+  const handleEdit = () => {
+    setIsEdit(!isEdit);
+  }
+
   return (
     <div className="profile-container">
       <Navbar />
@@ -111,57 +120,11 @@ const ProfilePage = () => {
           <div className="profile-detail">
             <div className="profile-greet">
               <span className="greet">Hello,</span> <br />
-              Dhanush Karthik
+              {name}
             </div>
             <img src={profile} className="profile-img" />
           </div>
-          <div className="user-details">
-            <div className="user-details-title">
-              <div className="user-detail-title">Details</div>
-              <div onClick={() => setIsEdit(!isEdit)}>
-                <AiFillEdit size={20} />
-              </div>
-            </div>
-            <div className="user-detail-name">Name: </div>
-            <div className="user-detail">
-              {isEdit ? (
-                <input
-                  placeholder="Name"
-                  value={name}
-                  onInput={(e) => setName(e.target.value)}
-                  className="user-detail-input"
-                />
-              ) : (
-                <div className="user-detail-input input-display">{name}</div>
-              )}
-            </div>
-            <div className="user-detail-name">Email id:</div>
-            <div className="user-detail">
-              {isEdit ? (
-                <input
-                  placeholder="Email id"
-                  value={email}
-                  onInput={(e) => setEmail(e.target.value)}
-                  className="user-detail-input"
-                />
-              ) : (
-                <div className="user-detail-input input-display">{email}</div>
-              )}
-            </div>
-            <div className="user-detail-name">Status: </div>
-            <div className="user-detail">
-              {isEdit ? (
-                <input
-                  placeholder="Status"
-                  value={status}
-                  onInput={(e) => setStatus(e.target.value)}
-                  className="user-detail-input"
-                />
-              ) : (
-                <div className="user-detail-input input-display">{status}</div>
-              )}
-            </div>
-          </div>
+          <UserDetails name={name} setName={setName} handleEdit={handleEdit} isEdit={isEdit}/>
           <div className="stats">
             <Stat title="Blogs Read" color={"#5C38FF"} count={264} />
             <Stat title="Blogs Liked" color={"#63C4ED"} count={1024} />
