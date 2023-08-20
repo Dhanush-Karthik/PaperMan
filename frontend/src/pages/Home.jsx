@@ -9,7 +9,7 @@ import FloatingAddButton from "../components/FloatingAddButton";
 import AddBlogContainer from "../components/AddBlogContainer";
 
 const Home = () => {
-  const [addBlog, setAddBlog] = useState(true);
+  const [addBlog, setAddBlog] = useState(false);
   const [drop, setDrop] = useState(true);
   const handleBlogSlide = () => {
     console.log("hehe");

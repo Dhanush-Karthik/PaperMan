@@ -1,0 +1,25 @@
+
+.blog-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.route {
+    color: lightgrey;
+    font-size: 17px;
+  }
+  
+.blog-title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+.subtitle {
+    font-size: 18px;
+    color: cornsilk;
+}
+

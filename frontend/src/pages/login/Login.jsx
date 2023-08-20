@@ -19,7 +19,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <h3 className="sub-heading1">DIVE IN</h3>
-      <h1 className="main-heading">
+      <h1 className="login-main-heading">
         Login to your <span className="green-text">account.</span>
       </h1>
       <p className="sub-heading2">
@@ -46,7 +46,7 @@ const Login = () => {
             className="form-button back"
             onClick={(e) => e.preventDefault()}
           >
-            <Link to="../signup">Sign up</Link>
+            <Link to="../">Back</Link>
           </button>
           <button className="form-button create" onClick={handleSubmit}>
             Create account

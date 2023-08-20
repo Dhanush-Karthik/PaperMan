@@ -1,0 +1,32 @@
+.reader-container {
+  min-width: 25rem;
+  background-color: #3a404d;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 10px 0px;
+}
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  color: white;
+  font-size: 12px;
+}
+.code-topic{
+    font-size: 15px;
+}
+.clipboard-button {
+  background-color: transparent;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.clipboard-button span {
+  margin-right: 0.50rem;
+  font-size: 15px; 
+}

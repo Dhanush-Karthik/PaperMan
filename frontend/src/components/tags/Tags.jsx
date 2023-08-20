@@ -4,7 +4,7 @@ import "./Tags.css";
 
 const Tags = ({value}) => {
   return (
-    <div className='tags'>
+    <div className='blog-tags'>
       {value}
     </div>
   )
