@@ -2,9 +2,9 @@ import React from "react";
 
 const AddSubtitle = ({ handleSubtitle }) => {
   return (
-    <div className="w-[100%] flx p-4 text-2xl">
+    <div className="w-[100%] flx p-4 text-xl">
       <input
-        className="p-4 text-yellow-600 outline-none w-[93%] rounded-3xl bg-gray-800 "
+        className="p-4 text-purpleCustom outline-none w-[93%] border-2 border-purpleCustom  bg-black "
         placeholder="Subtitle..."
         name="subtitle"
         onChange={handleSubtitle}

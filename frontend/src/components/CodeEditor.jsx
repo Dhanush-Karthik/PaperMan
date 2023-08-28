@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import Editor from "@monaco-editor/react";
-const CodeEditor = ({ language, code, setCode, handleCode }) => {
-  // const [code, setCode] = useState("");
-
+const CodeEditor = ({
+  language,
+  code,
+  setCode,
+  handleCode,
+  id,
+  ic,
+  subTopicArray,
+}) => {
   return (
     <Editor
-      height="50vh"
-      width="90vw"
-      onChange={handleCode}
-      language={language}
+      height="30vh"
+      width="100%"
+      onChange={(codeString) => {
+        handleCode(codeString, ic);
+      }}
+      language={subTopicArray[id].content[ic].data.language}
       defaultValue="// some comment"
+      value={subTopicArray[id].content[ic].data.code}
       theme="vs-dark"
       className="bg-black"
       options={{

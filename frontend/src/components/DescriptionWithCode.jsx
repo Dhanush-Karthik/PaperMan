@@ -9,45 +9,19 @@ import {
 
 import CodeToolBar from "./CodeToolBar";
 
-export default function DescriptionWithCode({ handleDescription }) {
+export default function DescriptionWithCode({
+  handleDescription,
+  id,
+  ic,
+  subTopicArray,
+  setSubTopicArray,
+}) {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(
-      convertFromRaw({
-        blocks: [
-          {
-            key: "3eesq",
-            text: "Write about the topic",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [
-              {
-                offset: 19,
-                length: 6,
-              },
-              {
-                offset: 25,
-                length: 5,
-                style: "ITALIC",
-              },
-              {
-                offset: 30,
-                length: 8,
-                style: "UNDERLINE",
-              },
-            ],
-            entityRanges: [],
-            data: {},
-          },
-        ],
-        entityMap: {},
-      })
+      convertFromRaw(subTopicArray[id].content[ic].data.description)
     )
   );
   const editor = useRef(null);
-
-  // useEffect(() => {
-  //   focusEditor();
-  // }, []);
 
   const focusEditor = () => {
     editor.current.focus();
@@ -153,9 +127,11 @@ export default function DescriptionWithCode({ handleDescription }) {
             blockStyleFn={myBlockStyleFn}
             onChange={(editorState) => {
               const contentState = editorState.getCurrentContent();
-
-              handleDescription(JSON.stringify(convertToRaw(contentState)));
-
+              console.log(JSON.stringify(convertToRaw(contentState)));
+              subTopicArray[id].content[ic].data.description =
+                convertToRaw(contentState);
+              setSubTopicArray(subTopicArray);
+              console.log(subTopicArray);
               setEditorState(editorState);
             }}
           />

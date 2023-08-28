@@ -1,3 +1,18 @@
 /* * {
   box-sizing: border-box;
 } */
+
+.guZdik {
+  border: 3px dashed #52489c !important;
+  min-width: 91% !important;
+  border-radius: 0px !important;
+  padding: 16px !important;
+}
+
+.guZdik > svg {
+  display: none;
+}
+
+svg {
+  display: block;
+}

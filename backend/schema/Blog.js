@@ -9,13 +9,8 @@ const blogSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  codeBlock: {
-    language: String,
-    code: String,
-  },
-  desc: {
-    type: String,
-    required: true,
+  subtTopicArray: {
+    type: Array,
   },
 });
 

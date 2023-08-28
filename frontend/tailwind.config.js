@@ -10,7 +10,11 @@ module.exports = {
         "Lucida Sans",
       ],
     },
-    extend: {},
+    extend: {
+      colors: {
+        purpleCustom: "#52489C",
+      },
+    },
   },
   plugins: [require("tailwind-scrollbar-hide")],
 };
