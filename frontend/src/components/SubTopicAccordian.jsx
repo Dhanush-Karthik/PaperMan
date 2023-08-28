@@ -60,6 +60,7 @@ const SubTopicAccordian = ({ subTopicArray, id, setSubTopicArray }) => {
 
     // Update the state using the updated array
     setSubTopicArray(updatedSubTopicArray);
+    console.log(subTopicArray);
   };
 
   const handleDescription = (desc, i) => {
