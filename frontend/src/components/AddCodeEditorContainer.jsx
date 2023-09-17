@@ -120,7 +120,7 @@ const AddCodeEditor = ({
             isClearable
             options={options}
             defaultInputValue={
-              subTopicArray[id].content[ic].data.language || "javascripts"
+              subTopicArray[id].content[ic].data.language || "javascript"
             }
             className="w-[85%]"
             classNamePrefix="react-select"
@@ -132,7 +132,7 @@ const AddCodeEditor = ({
         </div>
       </div>
       <div ref={editorRef} className="w-[90%] ">
-        <div className="bg-teal-600 w-full flex justify-end p-1">
+        <div className="bg-gray-700 w-full flex justify-end p-1">
           <span
             className="p-1 text-sm cursor-pointer"
             onClick={handleCopyClick}

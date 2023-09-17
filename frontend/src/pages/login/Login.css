@@ -1,5 +1,5 @@
 .login-container {
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       circle at top right,
       rgba(31, 45, 55, 0.9),
       rgba(31, 45, 55, 1)
@@ -7,7 +7,7 @@
     url("../../img/mountain.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   color: black;
   display: flex;
   align-items: flex-start;
@@ -30,8 +30,8 @@
 .sub-heading2 {
   color: rgb(154, 165, 180);
 }
-.green-text {
-  color: rgb(13 148 136);
+.blue-text {
+  color: #2563eb;
 }
 .login-form {
   display: flex;
@@ -53,13 +53,17 @@
   color: #fff;
 }
 .back {
-  background-color: rgb(51 70 83);
+  background-color: black;
 }
 .create {
-  background-color: rgb(13 148 136);
+  background-color: #2563eb;
 }
 input:focus {
   outline: none;
+}
+
+.anchor-blue a {
+  color: #2563eb;
 }
 
 @media screen and (max-width: 610px) {

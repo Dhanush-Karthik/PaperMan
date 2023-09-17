@@ -8,13 +8,9 @@
   }
 }
 
-.no-resize-symbol::-webkit-resizer {
-  display: none;
-}
-
 .editor-wrapper {
   width: 90%;
-
+  height: fit-content;
   border: 1px solid black;
   background: #fff;
   padding: 1rem;
@@ -24,7 +20,7 @@
 .editor-container {
   width: 100%;
   height: fit-content;
-  min-height: 300px;
+  /* min-height: 300px; */
   border: 3px solid rgb(13 148 136);
   color: white;
   padding: 1rem;

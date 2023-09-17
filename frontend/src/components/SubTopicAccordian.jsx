@@ -4,13 +4,14 @@ import DescriptionWithCode from "./DescriptionWithCode";
 import SubTopicTitle from "./SubTopicTitle";
 import { BsCodeSlash } from "react-icons/bs";
 import { MdOutlineDescription, MdSouth } from "react-icons/md";
+import { convertToRaw } from "draft-js";
 const SubTopicAccordian = ({ subTopicArray, id, setSubTopicArray }) => {
   const [index, setIndex] = useState(0);
 
   const handleIndexArray = (type) => {
     if (type == "description") {
       subTopicArray[id].content[index] = {
-        type: type,
+        kind: type,
         data: {
           description: {
             blocks: [
@@ -44,7 +45,7 @@ const SubTopicAccordian = ({ subTopicArray, id, setSubTopicArray }) => {
         },
       };
     } else {
-      subTopicArray[id].content[index] = { type: type, data: {} };
+      subTopicArray[id].content[index] = { kind: type, data: {} };
     }
 
     setSubTopicArray(subTopicArray);
@@ -64,7 +65,10 @@ const SubTopicAccordian = ({ subTopicArray, id, setSubTopicArray }) => {
 
   const handleDescription = (desc, i) => {
     const temp = subTopicArray[id].content[i];
-    subTopicArray[id].content[i] = { ...temp, data: { description: desc } };
+    subTopicArray[id].content[i] = {
+      ...temp,
+      data: { description: JSON.stringify(convertToRaw(desc)) },
+    };
     setSubTopicArray(subTopicArray);
     console.log(subTopicArray);
   };
@@ -80,8 +84,8 @@ const SubTopicAccordian = ({ subTopicArray, id, setSubTopicArray }) => {
         console.log(id);
         return (
           <>
-            {subTopicArray[id]?.content[i]?.type == "codeBlock" &&
-            subTopicArray[id].content[i].type != null ? (
+            {subTopicArray[id]?.content[i]?.kind == "codeBlock" &&
+            subTopicArray[id].content[i].kind != null ? (
               <AddCodeEditorContainer
                 key={i * 11}
                 subTopicArray={subTopicArray}

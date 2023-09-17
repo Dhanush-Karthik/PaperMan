@@ -4,7 +4,7 @@ const SubTopicTitle = ({ handleSubTopicTitle, id, subTopicArray }) => {
   return (
     <div className="w-[100%] flx p-4 text-xl mt-3">
       <input
-        className="p-3 text-purpleCustom  border-2 border-purpleCustom outline-none w-[93%] bg-black  "
+        className="p-4 text-purpleCustom  border-2 border-purpleCustom outline-none w-[93%] bg-black  "
         placeholder="Topic"
         name="topic"
         value={subTopicArray[id]?.title}

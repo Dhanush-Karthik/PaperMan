@@ -27,7 +27,7 @@ const Content = ({
     }
   };
   return (
-    <div className="w-[95%] flex gap-2 justify-center items-center flex-col">
+    <div className="w-[100%] flex gap-2 justify-center items-center flex-col">
       {subTopicIndex.map((id, index) => {
         return (
           <ContentItem

@@ -1,13 +1,18 @@
 import React from "react";
-
+import { PiSubtitlesFill } from "react-icons/pi";
 const BlogTitle = ({ handleTitle }) => {
   return (
-    <div className="w-[100%]    p-4  flx text-xl  ">
+    <div className="w-[90%]   font-thin  flx text-3xl bg-[#232323]  mt-20    ">
       <input
         type="text"
-        className="outline-none  text-teal-600 p-5 w-[93%] bg-black border-teal-600 border-2  "
-        placeholder="Enter your title"
+        placeholder="Give a title"
+        className="outline-none  w-[98%] p-4 text-white  bg-inherit rounded-3xl  "
         onChange={handleTitle}
+      />
+      <PiSubtitlesFill
+        className=" text-black w-[15%] md:w-[5%] "
+        size={28}
+        color="white"
       />
     </div>
   );

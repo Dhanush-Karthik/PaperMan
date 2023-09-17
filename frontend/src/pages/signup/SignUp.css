@@ -1,5 +1,5 @@
 .signup-container {
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       circle at top right,
       rgba(31, 45, 55, 0.9),
       rgba(31, 45, 55, 1)
@@ -7,7 +7,7 @@
     url("../../img/mountain.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   color: black;
   display: flex;
   align-items: flex-start;
@@ -31,7 +31,7 @@
   color: rgb(154, 165, 180);
 }
 .green-text {
-  color: rgb(13 148 136);
+  color: #2563eb;
 }
 .signup-form {
   display: flex;
@@ -49,17 +49,18 @@
   width: 100%;
 }
 .form-button {
-  background-color: rgb(31, 45, 55);
+  background-color: black;
   width: 100%;
   height: 50px;
   border-radius: 20px;
   color: #fff;
 }
 .back {
-  background-color: rgb(51 70 83);
+  background-color: black;
+  border: 1px solid white;
 }
 .create {
-  background-color: rgb(13 148 136);
+  background-color: #2563eb;
 }
 input:focus {
   outline: none;

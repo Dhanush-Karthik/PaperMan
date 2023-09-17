@@ -4,22 +4,53 @@ dotenv.config();
 import cors from "cors";
 import BlogRouter from "./controllers/BlogController.js";
 import mongoose from "mongoose";
-
+import bodyParser from "body-parser";
+import AuthRouter from "./controllers/AuthController.js";
+import { expressjwt } from "express-jwt";
+import cookieParser from "cookie-parser";
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyParser.json({ limit: "100mb" }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+
+// app.use((req, res, next) => {
+//   if (req.cookies && req.cookies.access_token) {
+//     req.headers.Authorization = `Bearer ${req.cookies.access_token}`;
+//   }
+//   next();
+// });
+
+// app.use(
+//   expressjwt({
+//     secret: process.env.JWT_SECRET_KEY,
+//     algorithms: ["HS256"],
+//   }).unless({ path: [/^\/auth/] })
+// );
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["http://localhost:3000"],
+    credentials: true,
   })
 );
 
-app.use("/blog", BlogRouter);
+app.use(process.env.BLOG, BlogRouter);
+app.use(process.env.AUTH, AuthRouter);
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  if (err.name == "UnauthorizedError") {
+    return res.status(401).json({ error: "Unauthorized access" });
+  } else {
+    return res.status(401).json({ error: "Not authenticated yet " });
+  }
+});
 
 app.listen(process.env.PORT, () => {
   mongoose
-    .connect("mongodb+srv://paperman:paperman@paperman.jaxjg6h.mongodb.net")
+    .connect(process.env.DBSTRING)
     .then(() => {
       console.log("server is running on port " + process.env.PORT);
     })

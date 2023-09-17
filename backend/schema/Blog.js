@@ -1,17 +1,33 @@
 import mongoose from "mongoose";
 
-const blogSchema = mongoose.Schema({
+const contentSchema = new mongoose.Schema({
+  kind: {
+    type: String,
+    required: true,
+  },
+  lang: {
+    type: String,
+  },
+  data: {
+    type: String,
+    required: true,
+  },
+});
+
+const blogSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-  subtitle: {
+  thumbnail: {
     type: String,
-    required: true,
   },
-  subtTopicArray: {
-    type: Array,
-  },
+  hastags: [
+    {
+      type: String,
+    },
+  ],
+  content: [contentSchema],
 });
 
 const blogModel = mongoose.model("blogs", blogSchema);

@@ -130,6 +130,7 @@ export default function DescriptionWithCode({
               console.log(JSON.stringify(convertToRaw(contentState)));
               subTopicArray[id].content[ic].data.description =
                 convertToRaw(contentState);
+
               setSubTopicArray(subTopicArray);
               console.log(subTopicArray);
               setEditorState(editorState);

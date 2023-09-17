@@ -1,79 +1,72 @@
 import React, { useState } from "react";
 import Editor from "@monaco-editor/react";
-const CodeEditor = ({
-  language,
-  code,
-  setCode,
-  handleCode,
-  id,
-  ic,
-  subTopicArray,
-}) => {
+const CodeEditor = ({ content, index, handleCodeEditor }) => {
   return (
     <Editor
-      height="30vh"
+      height="40vh"
       width="100%"
       onChange={(codeString) => {
-        handleCode(codeString, ic);
+        handleCodeEditor(codeString, index);
       }}
-      language={subTopicArray[id].content[ic].data.language}
-      defaultValue="// some comment"
-      value={subTopicArray[id].content[ic].data.code}
+      defaultLanguage="javascript"
+      language={content[index].lang}
+      defaultValue="//write here"
+      value={content[index]?.data}
       theme="vs-dark"
-      className="bg-black"
+      className="bg-black  text-purple-600 "
       options={{
         acceptSuggestionOnCommitCharacter: true,
         acceptSuggestionOnEnter: "on",
         accessibilitySupport: "auto",
-        autoIndent: false,
+        autoIndent: true,
         dragAndDrop: true,
-        fontSize: 20,
+        fontSize: 18,
         automaticLayout: true,
         codeLens: true,
         colorDecorators: true,
         contextmenu: true,
         cursorBlinking: "blink",
-        cursorSmoothCaretAnimation: false,
-        cursorStyle: "line",
-        disableLayerHinting: false,
+        cursorSmoothCaretAnimation: true,
+        cursorStyle: "blink",
+        disableLayerHinting: true,
         disableMonospaceOptimizations: false,
-        dragAndDrop: false,
-        fixedOverflowWidgets: false,
+        dragAndDrop: true,
+        fixedOverflowWidgets: true,
         folding: true,
         foldingStrategy: "auto",
-        fontLigatures: false,
-        formatOnPaste: false,
-        formatOnType: false,
-        hideCursorInOverviewRuler: false,
+        fontLigatures: true,
+        formatOnPaste: true,
+        formatOnType: true,
+        hideCursorInOverviewRuler: true,
         highlightActiveIndentGuide: true,
         links: true,
-        mouseWheelZoom: false,
+        mouseWheelZoom: true,
         multiCursorMergeOverlapping: true,
         multiCursorModifier: "alt",
         overviewRulerBorder: true,
         overviewRulerLanes: 2,
         quickSuggestions: true,
-        quickSuggestionsDelay: 100,
+        quickSuggestionsDelay: 0,
         readOnly: false,
-        renderControlCharacters: false,
+        renderControlCharacters: true,
         renderFinalNewline: true,
         renderIndentGuides: true,
         renderLineHighlight: "all",
-        renderWhitespace: "none",
-        revealHorizontalRightPadding: 30,
+        renderWhitespace: "all",
+        revealHorizontalRightPadding: 0,
         roundedSelection: true,
         rulers: [],
-        scrollBeyondLastColumn: 5,
+        scrollBeyondLastColumn: 10,
         scrollBeyondLastLine: true,
         selectOnLineNumbers: true,
         selectionClipboard: true,
         selectionHighlight: true,
         showFoldingControls: "mouseover",
-        smoothScrolling: false,
+        smoothScrolling: true,
         suggestOnTriggerCharacters: true,
         wordBasedSuggestions: true,
         wordSeparators: "~!@#$%^&*()-=+[{]}|;:'\",.<>/?",
-        wordWrap: "off",
+        wordWrap: "on",
         wordWrapBreakAfterCharacters: "\t})]?|&,;",
         wordWrapBreakBeforeCharacters: "{([+",
         wordWrapBreakObtrusiveCharacters: ".",
