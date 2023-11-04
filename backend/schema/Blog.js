@@ -14,21 +14,34 @@ const contentSchema = new mongoose.Schema({
   },
 });
 
-const blogSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  thumbnail: {
-    type: String,
-  },
-  hastags: [
-    {
+const blogSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    thumbnail: {
       type: String,
     },
-  ],
-  content: [contentSchema],
-});
+    hastags: [
+      {
+        type: String,
+      },
+    ],
+    createdBy: {
+      type: String,
+      reqiured: true,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    content: [contentSchema],
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const blogModel = mongoose.model("blogs", blogSchema);
 

@@ -2,213 +2,106 @@ import { React, useState } from "react";
 
 import "./BlogPage.css";
 
-import { AiFillLike, AiOutlineArrowRight, AiOutlineLike } from "react-icons/ai";
-import { BiCommentDetail } from "react-icons/bi";
-import Tags from "../../components/tags/Tags";
-
 import CommentContainer from "../../components/commentcontainer/CommentContainer";
 
-import profile from "../../img/profile.png";
 import Navbar from "../../components/Navbar";
+import BlogTitle from "../../components/blogtitle/BlogTitle";
+import BlogOptions from "../../components/options/BlogOptions";
+
+import TopCategories from "../../components/topcategories/TopCategories";
+import Author from "../../components/author/Author";
+import TableOfContent from "../../components/tableofcontent/TableOfContent";
+import BlogSuggestion from "../../components/blogsuggestion/BlogSuggestion";
+import ReadOnlyEditor from "../../components/readonlyeditor/ReadOnlyEditor";
+import DescriptionContainer from "../../components/descriptioncontainer/DescriptionContainer";
+
 const Blogpage = () => {
   const [openComment, setOpenComment] = useState(true);
-  const [isLike, setIsLike] = useState(false);
 
-  const subtitle = [
-    {
-      id: 1,
-      title: "Subtitle-1",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolores consequatur facere enim suscipit. Quod mollitia ducimu nobis maxime voluptatum eos excepturi dignissimos aliquid natus aut tempore, iure minus eveniet ad, perspiciatis, facere dolorem sunt corporis qui praesentium commodi neque? Culpa neque expedita enim, doloribus odio maiores exercitationem qui dolorum eligendi quos. Rerum ad consequuntur repudiandae repellendus fugiat perspiciatis est animi qui, tempore enim accusamus corrupti saepe veniam? Quos facilis, nemo est velit autem doloremque fuga animi odio libero. Tempora placeat deleniti et non adipisci, totam iusto enim, quos quas quasi quisquam cum voluptas earum maiores! In enim aperiam non doloribus. Magnam unde corrupti alias, neque quos praesentium ipsa blanditiis! Necessitatibus quidem vero recusandae incidunt, veniam laudantium numquam sed fuga in odio labore eius aliquid magnam ab consequatur sequi provident consectetur itaque velit perspiciatis explicabo eum neque quasi",
-    },
-    {
-      id: 2,
-      title: "Subtitle-2",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolores consequatur facere enim suscipit. Quod mollitia ducimu nobis maxime voluptatum eos excepturi dignissimos aliquid natus aut tempore, iure minus eveniet ad, perspiciatis, facere dolorem sunt corporis qui praesentium commodi neque? Culpa neque expedita enim, doloribus odio maiores exercitationem qui dolorum eligendi quos. Rerum ad consequuntur repudiandae repellendus fugiat perspiciatis est animi qui, tempore enim accusamus corrupti saepe veniam? Quos facilis, nemo est velit autem doloremque fuga animi odio libero. Tempora placeat deleniti et non adipisci, totam iusto enim, quos quas quasi quisquam cum voluptas earum maiores! In enim aperiam non doloribus. Magnam unde corrupti alias, neque quos praesentium ipsa blanditiis! Necessitatibus quidem vero recusandae incidunt, veniam laudantium numquam sed fuga in odio labore eius aliquid magnam ab consequatur sequi provident consectetur itaque velit perspiciatis explicabo eum neque quasi",
-    },
-    {
-      id: 3,
-      title: "Subtitle-3",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolores consequatur facere enim suscipit. Quod mollitia ducimu nobis maxime voluptatum eos excepturi dignissimos aliquid natus aut tempore, iure minus eveniet ad, perspiciatis, facere dolorem sunt corporis qui praesentium commodi neque? Culpa neque expedita enim, doloribus odio maiores exercitationem qui dolorum eligendi quos. Rerum ad consequuntur repudiandae repellendus fugiat perspiciatis est animi qui, tempore enim accusamus corrupti saepe veniam? Quos facilis, nemo est velit autem doloremque fuga animi odio libero. Tempora placeat deleniti et non adipisci, totam iusto enim, quos quas quasi quisquam cum voluptas earum maiores! In enim aperiam non doloribus. Magnam unde corrupti alias, neque quos praesentium ipsa blanditiis! Necessitatibus quidem vero recusandae incidunt, veniam laudantium numquam sed fuga in odio labore eius aliquid magnam ab consequatur sequi provident consectetur itaque velit perspiciatis explicabo eum neque quasi",
-    },
-    {
-      id: 4,
-      title: "Subtitle-4",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dolores consequatur facere enim suscipit. Quod mollitia ducimu nobis maxime voluptatum eos excepturi dignissimos aliquid natus aut tempore, iure minus eveniet ad, perspiciatis, facere dolorem sunt corporis qui praesentium commodi neque? Culpa neque expedita enim, doloribus odio maiores exercitationem qui dolorum eligendi quos. Rerum ad consequuntur repudiandae repellendus fugiat perspiciatis est animi qui, tempore enim accusamus corrupti saepe veniam? Quos facilis, nemo est velit autem doloremque fuga animi odio libero. Tempora placeat deleniti et non adipisci, totam iusto enim, quos quas quasi quisquam cum voluptas earum maiores! In enim aperiam non doloribus. Magnam unde corrupti alias, neque quos praesentium ipsa blanditiis! Necessitatibus quidem vero recusandae incidunt, veniam laudantium numquam sed fuga in odio labore eius aliquid magnam ab consequatur sequi provident consectetur itaque velit perspiciatis explicabo eum neque quasi",
-    },
-  ];
+  // BlogRouter.get("/sample", async (req, res) => {
+  //   console.log("getting");
+  //   const blog = await blogModel.find();
+  //   console.log(blog);
+  //   return res.status(200).json({
+  //     message: "successfull",
+  //     data: blog,
+  //   });
+  // });
 
-  const suggestion = [
-    {
-      id: 1,
-      title: "Suggestion-1",
-      link: "#!",
-    },
-    {
-      id: 2,
-      title: "Suggeestion-2",
-      link: "#!",
-    },
-    {
-      id: 3,
-      title: "Suggeestion-3",
-      link: "#!",
-    },
-    {
-      id: 4,
-      title: "Suggeestion-4",
-      link: "#!",
-    },
-  ];
-
-  const tags = [
-    {
-      id: 1,
-      value: "React JS",
-    },
-    {
-      id: 1,
-      value: "Node JS",
-    },
-    {
-      id: 1,
-      value: "Ruby",
-    },
-    {
-      id: 1,
-      value: "C",
-    },
-    {
-      id: 1,
-      value: "C#",
-    },
-    {
-      id: 1,
-      value: "C++",
-    },
-    {
-      id: 1,
-      value: "Java",
-    },
-    {
-      id: 1,
-      value: "Spring Boot",
-    },
-    {
-      id: 1,
-      value: "Keycloak",
-    },
-    {
-      id: 1,
-      value: "Maven",
-    },
-    {
-      id: 1,
-      value: "HTML",
-    },
-  ];
-  const handleComment = () => {
-    setOpenComment(false);
-  };
-
-  const handleLike = () => {
-    setIsLike(!isLike);
+  const blogData = {
+    title: "Is Javascript dead?",
+    subtitle: "Let's Explore Javascript",
+    subTopics: [
+      {
+        id: 1,
+        subTopic: "Subtopic-1",
+        content: [
+          {
+            type: "description",
+            data:  `{"blocks":[{"key":"3eesq","text":"Lorem ipsum title","type":"header-one","depth":0,"inlineStyleRanges":[{"offset":0,"length":17,"style":"HIGHLIGHT"}],"entityRanges":[],"data":{}},{"key":"f63nc","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"e5qh4","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nobis omnis iure delectus rerum tempora unde sint deserunt quam fuga laudantium corporis enim voluptate maxime animi, tempore iusto eligendi debitis dicta pariatur impedit? Sit, architecto qui modi corporis excepturi nam aliquam voluptatem praesentium nulla magni enim animi officiis, dignissimos nobis, officia quidem tempora natus dolor quisquam autem! Repellat veritatis facere deserunt voluptatibus aperiam omnis sapiente adipisci mollitia eius quis. Aut corrupti aliquid vitae sit? Nisi aut neque illum delectus! Sequi quasi numquam, qui error blanditiis commodi eligendi, ex nostrum iure minus officia doloremque! Atque totam deleniti delectus, quae ad ","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"dksbi","text":"praesentium voluptas adipisci impedit tenetur temporibus. In omnis molestias, perspiciatis cum rem perferendis vitae aperiam iste, quibusdam facilis voluptatibus, id possimus. Dolores numquam ipsam id consequuntur officia eius, tempore nisi, quidem fugiat est quo ea fuga. Voluptas praesentium officia atque tenetur illo similique delectus, deserunt hic rerum debitis quae a eveniet neque cupiditate voluptates quis voluptatibus rem possimus doloremque! Fugiat optio itaque at quis rerum aspernatur saepe, modi qui incidunt id corrupti minus impedit accusamus natus sequi ratione debitis. Consectetur nostrum porro voluptate? Possimus fugit numquam, qui, eligendi est laboriosam placeat enim deserunt nulla neque dolorem eum omnis quas facilis in.","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"aig91","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"fom5l","text":"int a=10;","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":0,"length":9,"style":"CODEBLOCK"}],"entityRanges":[],"data":{}},{"key":"dquf9","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"b8esq","text":"this is quote ra","type":"blockQuote","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"f242u","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"oo65","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"551a4","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}`,
+          },
+          {
+            type: "code",
+            data: {
+              language: "java",
+              code: "int a=10;\nSystem.out.println(\"helloWorld\")\nint num=20;",
+            },
+          },
+        ],
+      },
+      {
+        id: 2,
+        subTopic: "SubTopic-2",
+        content: [
+          {
+            type: "description",
+            data:  "{\"blocks\":[{\"key\":\"3eesq\",\"text\":\"sdfsadWrite about the topic\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":25,\"length\":2}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+          },
+          {
+            type: "code",
+            data: {
+              language: "java",
+              code: "int a=10;",
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <>
       <Navbar />
-
-      <div className="heading-container">
-        <div className="route">Home &gt; Blog &gt; Is JS dead?</div>
-        <div className="topic">
-          <h1 className="blog-title">Is Java script dead?</h1>
-          <h1 className="subtitle">Lets get an overview!</h1>
-        </div>
-      </div>
-
+      <BlogTitle blog={blogData} />
       <div className="blog-container">
-        <div id="options" className="options">
-          <div className="icons" onClick={handleLike}>
-            {isLike ? (
-              <AiFillLike size={"20px"} color="rgb(13 148 136)" />
-            ) : (
-              <AiOutlineLike size={"20px"} color="rgb(13 148 136)" />
-            )}
-          </div>
-          <div className="icons" onClick={handleComment}>
-            <BiCommentDetail size={"20px"} color="rgb(13 148 136)" />
-          </div>
-        </div>
+        <BlogOptions setOpenComment={setOpenComment} />
         <div className="blog">
-          <p className="content">
-            {subtitle.map((item) => {
+          <div className="content">
+            {blogData.subTopics.map((subTopic) => {
               return (
                 <>
-                  <h3 className="blog-subtitle" id={item.id}>
-                    {item.title}
+                  <h3 className="blog-subtitle" id={subTopic.id}>
+                    {subTopic.subTopic}
                   </h3>
-                  {item.content}
-                  <br />
-                  <br />
+                  {subTopic.content.map((content)=>{
+                    
+                    if(content.type==="code")
+                     return <ReadOnlyEditor language={content.data.language} code={content.data.code}/>
+                    else 
+                      return <DescriptionContainer value={content.data} />
+                  })}
                 </>
               );
             })}
-          </p>
-        </div>
-        <div className="side-pannel">
-          <div className="top-categories">
-            <h1 className="title">Top Categories</h1>
-            <div className="catg-container">
-              {tags.map((item) => (
-                <Tags id={item.id} value={item.value} />
-              ))}
-            </div>
           </div>
+        </div>
+
+        <div className="side-pannel">
+          <TopCategories />
           <div className="sidepanel-sticky">
-            <div className="sidepanel-container">
-              <h1 className="title">Author</h1>
-              <div className="author">
-                <img src={profile} className="profile-photo" />
-                <div>
-                  <div className="author-name">Dhanush Karthik</div>
-                  <div className="author-role">Newbiee</div>
-                </div>
-              </div>
-            </div>
-            <div className="sidepanel-container">
-              <h1 className="title">Table of content</h1>
-              <ul className="sidepanel-container-list">
-                {subtitle.map((item) => {
-                  return (
-                    <div className="arrow">
-                      <AiOutlineArrowRight color="rgb(13 148 136)" />
-                      <a className="sug" href={"#" + item.id}>
-                        {item.title}
-                      </a>
-                    </div>
-                  );
-                })}
-              </ul>
-            </div>
-            <div className="sidepanel-container">
-              <h1 className="title">Suggestions</h1>
-              <ul className="sidepanel-container-list">
-                {suggestion.map((item) => {
-                  return (
-                    <div className="arrow" id={item.id}>
-                      <AiOutlineArrowRight color="rgb(13 148 136)" />
-                      <a className="sug" href={item.link}>
-                        {item.title}
-                      </a>
-                    </div>
-                  );
-                })}
-              </ul>
-            </div>
+            <Author />
+            <TableOfContent />
+            <BlogSuggestion />
           </div>
         </div>
       </div>

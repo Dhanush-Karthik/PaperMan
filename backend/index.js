@@ -12,34 +12,42 @@ const app = express();
 
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
 app.use(cookieParser());
-
-// app.use((req, res, next) => {
-//   if (req.cookies && req.cookies.access_token) {
-//     req.headers.Authorization = `Bearer ${req.cookies.access_token}`;
-//   }
-//   next();
-// });
-
-// app.use(
-//   expressjwt({
-//     secret: process.env.JWT_SECRET_KEY,
-//     algorithms: ["HS256"],
-//   }).unless({ path: [/^\/auth/] })
-// );
-
 app.use(
   cors({
     origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
+app.use((req, res, next) => {
+  const accessToken = req.cookies.access_token;
 
-app.use(process.env.BLOG, BlogRouter);
-app.use(process.env.AUTH, AuthRouter);
+  if (accessToken) {
+    req.headers.authorization = `Bearer ${accessToken}`;
+  }
+
+  next();
+});
+app.use(
+  expressjwt({
+    secret: process.env.JWT_SECRET_KEY,
+    algorithms: ["HS256"],
+  }).unless({
+    path: [
+      /^\/auth/,
+      "/blog/all",
+      /^\/blog\/[a-fA-F0-9]{24}$/,
+      /^\/blog\/hashtag\/node.js/,
+    ],
+  })
+);
+
+app.use("/blog", BlogRouter);
+app.use("/auth", AuthRouter);
 
 app.use((err, req, res, next) => {
+  console.log("error hitting on the backend");
   console.log(err);
   if (err.name == "UnauthorizedError") {
     return res.status(401).json({ error: "Unauthorized access" });
@@ -47,7 +55,9 @@ app.use((err, req, res, next) => {
     return res.status(401).json({ error: "Not authenticated yet " });
   }
 });
-
+app.get("/test", (req, res) => {
+  return res.json({ message: "Server is up and running" });
+});
 app.listen(process.env.PORT, () => {
   mongoose
     .connect(process.env.DBSTRING)

@@ -72,7 +72,7 @@ AuthRouter.post("/login", async (req, res) => {
             const jwt = JwtSignIn(jwtObject);
             if (jwt) {
               res.cookie("access_token", jwt, {
-                maxAge: 3600000,
+                maxAge: 86400000,
                 httpOnly: true,
               });
               return res

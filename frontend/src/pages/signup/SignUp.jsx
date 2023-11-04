@@ -163,7 +163,7 @@ const SignUp = () => {
             className="form-button back"
             onClick={(e) => e.preventDefault()}
           >
-            <Link to="../login">Sign in</Link>
+            <Link to="../">Back</Link>
           </button>
           <button onClick={handleSubmit} className="form-button create">
             Create account

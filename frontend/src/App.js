@@ -8,6 +8,7 @@ import ProfilePage from "./pages/profile-page/ProfilePage";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
+import "./App.css";
 
 function App() {
   return (

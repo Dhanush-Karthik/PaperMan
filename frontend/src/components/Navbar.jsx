@@ -23,7 +23,7 @@ const Navbar = ({ handleDropDown, drop }) => {
           EXPLORE
         </div>
         <div className="rounded-xl p-3 hover:bg-gray-900 cursor-pointer  w-[30%]  text-center ">
-          BLOGS
+          <Link to={"../blog"}>BLOGS</Link>
         </div>
         <div className="rounded-xl p-3  hover:bg-gray-900 cursor-pointer  w-[30%]  text-center ">
           NEWS

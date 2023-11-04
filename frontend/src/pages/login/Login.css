@@ -22,10 +22,11 @@
   color: rgb(154, 165, 180);
   font-size: 15px;
 }
-.main-heading {
+.login-main-heading {
   font-size: 60px;
   color: #fff;
-  margin: 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .sub-heading2 {
   color: rgb(154, 165, 180);

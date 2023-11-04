@@ -79,7 +79,7 @@ const Login = () => {
   return (
     <div className="login-container font-thin">
       <h3 className="sub-heading1 ">DIVE IN</h3>
-      <h1 className="main-heading font-thin">
+      <h1 className="login-main-heading font-thin">
         Login to your <span className="blue-text">account.</span>
       </h1>
       <p className="sub-heading2 pl-0 mt-4 flex gap-3 ">
